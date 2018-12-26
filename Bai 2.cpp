@@ -193,6 +193,8 @@ int main()
      //        cout<<"\nKhoang cach giua 2 ngay: ";
     //D=KhoangCachDate(D1,D2);
     //XuatDate(D);
-   // D=TruRa(D1);
-    //XuatDate(D);
+   // D=CongThem(D1);
+   // XuatDate(D);
+    D=TruRa(D1);
+    XuatDate(D);
   }

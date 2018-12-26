@@ -6,8 +6,8 @@
 #include <stack>
 #include<vector>
 using namespace std;
-ifstream f("D:/NhapTuFile");
-ofstream g("D:/XuatTuFile");
+ifstream f("D:/NhapTuFile.txt");
+ofstream g("D:/XuatTuFile.txt");
 class DB{
 	public:
 	string Ten;
@@ -75,6 +75,11 @@ class DBDT{
 		printf(K);
 	}
 	void Xoa(){ 
+	string s;
+	getline(cin, s);
+	for(int i = 0; i < H.size(); i++)
+		if(k.compare(H[i].Ten)== 0)
+			H.
 	}
 	void Tim(){
 		string k;
@@ -96,4 +101,6 @@ int main()
 {
 	DBDT db;
 	db.NhapDB();
+	db.Them();
+	db.Tim();
 }
