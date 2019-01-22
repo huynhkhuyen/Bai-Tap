@@ -4,17 +4,22 @@
 #include <string.h>
 #include <stdlib.h>
 using namespace std;
-fstream fi("D:/NhapTuFile.txt");
-fstream fo("D:/XuatTuFile.txt");
+fstream fi("input.txt");
+fstream fo("output.txt");
 class DANHBA{
-	string gt,sdt,email,diachi,ten;
-	vector <DANHBA> S;
-	vector <DANHBA> P;
+	private:
+		string gt,sdt,email,diachi;
 	public:
+		string ten;
 		// Xuat 1 danh ba ra man hinh
 		xuat(){
-			cout<<"\nTen: "<<ten<<"\tGioi tinh: "<<gt <<"\tSDT: "<<sdt<<endl<<"\tEmail: "<<email<<"/tDia chi: "<<diachi;
+			cout<<"Ten: "<<ten<<endl;
+			cout<<"Gioi tinh: "<<gt<<endl;
+			cout<<"SDT: "<<sdt<<endl;
+			cout<<"Email: "<<email<<endl;
+			cout<<"Dia chi: "<<diachi;
 		}
+		// doc 1 danh ba tu file
 		nhapF(){
 
 			getline( fi, ten);
@@ -23,6 +28,7 @@ class DANHBA{
 			getline( fi, email);
 			getline( fi, diachi);
 		}
+		// nhap 1 danh ba vao vector danh ba
 		nhap(){
 			cout<<"Nhap ten: ";
 			cin.sync();
@@ -49,6 +55,12 @@ class DANHBA{
 			fo<<email<<endl;
 			fo<<diachi<<endl;
 		}
+};
+class DSDB{
+	vector <DANHBA> S;
+	vector <DANHBA> P;
+	public:
+		// doc danh ba tu file
 		void nhaptufile(){
 			int n;
 			string h;	
@@ -119,7 +131,7 @@ class DANHBA{
 };
 int main(){
 	int x;
-	DANHBA A;
+	DSDB A;
 	A.nhaptufile();
 	cout<<"Danh sanh danh ba: "<<endl;
 	cout<<"------------------------------"<<endl;
@@ -171,3 +183,4 @@ int main(){
 	fo.close();	
 	
 }
+

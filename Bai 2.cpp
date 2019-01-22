@@ -72,7 +72,7 @@ void NhapDate(DATE &D)
         D.y = atoi(C);
         C[2] = '\0';
         cout << D.d << ":" << D.m << ":" << D.y << endl;
-                      fflush(stdin);
+            fflush(stdin);
         if(KiemTraDate(D)==false)
             cout<<"\nBan da nhap sai, moi ban nhap lai: ";
         else
@@ -185,16 +185,16 @@ int main()
 { 
     DATE D1,D2,D;
     NhapDate(D1);
-// NhapDate(D2);
-   // cout << "So ngay D2 trong nam " << TinhNgay(D1,D2);
-   // XuatDate(D1);
-   // NhapDate(D2);
-    //XuatDate(D2);
-     //        cout<<"\nKhoang cach giua 2 ngay: ";
-    //D=KhoangCachDate(D1,D2);
-    //XuatDate(D);
-   // D=CongThem(D1);
-   // XuatDate(D);
+ NhapDate(D2);
+    cout << "So ngay D2 trong nam " << TinhNgay(D1,D2);
+    XuatDate(D1);
+    NhapDate(D2);
+    XuatDate(D2);
+    cout<<"\nKhoang cach giua 2 ngay: ";
+    D=KhoangCachDate(D1,D2);
+    XuatDate(D);
+    D=CongThem(D1);
+    XuatDate(D);
     D=TruRa(D1);
     XuatDate(D);
   }

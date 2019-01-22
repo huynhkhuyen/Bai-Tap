@@ -12,11 +12,10 @@
 #define OUT "Ra.txt"
 using namespace std;
  
-typedef int item;
 typedef struct GRAPH
 {
 	char *name;	// ten cac dinh
-	item **G;	// ma tran trong so
+	int **G;	// ma tran trong so
 	int n;		// so phan tu cua do thi
 } Graph;
  
@@ -26,7 +25,7 @@ void output_file(Graph Gr);//Xuat ket qua tu file ra
 void Menu(int &select); //menu chon thuat toan
 int Dijkstra(Graph Gr, int a, int b);//thuat toan Dijkstra
 int number_or_char(Graph Gr); //nhap vao kiem tra la ky tu hay so va tra ve vi tri cua dinh trong do thi
-item tongthiethai(Graph Gr); //tong quang duong di cua moi dinh (thay the cho vo cung trong ma tran trong so)
+int tongthiethai(Graph Gr); //tong quang duong di cua moi dinh (thay the cho vo cung trong ma tran trong so)
 string convert_to_string(int number);//chuyen so number sang chuoi
 int floyd (Graph Gr, int a, int b);
  
@@ -140,9 +139,9 @@ void output_file(Graph Gr)
 }
  
 //tong quang duong di cua moi dinh (thay the cho vo cung trong ma tran trong so)
-item tongthiethai(Graph Gr) 
+int tongthiethai(Graph Gr) 
 {
-	item sum = 0;
+	int sum = 0;
 	for (int i=0; i<Gr.n; i++)
 		for (int j=0; j<Gr.n; j++)
 			sum += Gr.G[i][j];
@@ -331,8 +330,8 @@ int floyd (Graph Gr, int a, int b)
 	char *s, *temp;
 	s = new char [Gr.n*10];
 	temp = new char [10];
-	stack <item> S1;
-	stack <item> S2;
+	stack <int> S1;
+	stack <int> S2;
 	S1.push(a); //danh sach nap cac dinh vao
 	S1.push(b); //danh sach xuat cac dinh ra
 	int dich, tg;
